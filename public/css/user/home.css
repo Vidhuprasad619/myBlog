@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    background-image: linear-gradient(rgb(29, 187, 126), rgb(3, 12, 39));
+    background-blend-mode: luminosity;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #01070f;
+    color: #fff;
+    padding: 20px;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 24px;
+}
+nav h1 span{
+    font-size: 12px;
+}
+
+.login-signup a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+main {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.post-slider{
+    position: relative;
+}
+.post-slider .slider-title{
+    text-align: center;
+    margin: 30px auto;
+    font-family:ui-monospace;
+    font-weight: 900;
+}
+.post-slider .next{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    font-size: 2em;
+    color: #030e1b;
+    cursor: pointer;
+}
+.post-slider .prev{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 2em;
+    color: #030e1b;
+    cursor: pointer;
+}
+.post-slider .post-wrapper{
+    width: 84%;
+    height: 350px;
+    margin: 0px auto;
+    overflow: hidden;
+    padding: 10px 0px 10px 0px;
+}
+.post-slider .post-wrapper .post{
+    width: 300px;
+    height: 330px;
+    margin: 0px 10px;
+    display: inline-block;
+    background-color: #b5beca;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem;
+}
+.post h2{
+    text-align: center;
+    margin: 3px;
+}
+.post-slider .post-wrapper .post .slider-image{
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+.post-slider .post-wrapper .post .post-info{
+    height: 130px;
+    padding: 0PX 5px;
+    overflow: auto;
+    font-size: x-small;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #01070f;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info, .social-media {
+    padding: 10px;
+}
+
+.contact-info h3, .social-media h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.social-media ul li a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+
+
+@media screen and (max-width: 450px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .login-signup {
+        margin-top: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+}

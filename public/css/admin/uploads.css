@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/images/backgroundImage.jpg')no-repeat;
+    background-size: cover;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #01070f;
+    color: #fff;
+    padding: 20px;
+}
+    
+header a:hover{
+    color: #b5beca;
+}
+    
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+    
+nav h1 {
+    margin: 0;
+    font-size: 24px;
+}
+    
+nav h1 span{
+    font-size: 12px;
+}
+    
+.logout a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+main {
+    padding: 30px 20px 100px 30px;
+}
+
+.blog-form label,
+.blog-form textarea,
+.blog-form select,
+.blog-form input {
+    display: block;
+    margin-bottom: 10px;
+    width: 80%;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+}
+
+.blog-form select {
+    font-size: 18px;
+    background-size: 20px 20px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.blog-form textarea {
+    font-size: 18px;
+    height: 100px;
+}
+
+.blog-form button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.blog-form button:hover {
+    background-color: #0056b3;
+}
+
+.blog-form #title {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 12px;
+}
+
+.image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-preview img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #01070f;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info, .social-media {
+    padding: 10px;
+}
+
+.contact-info h3, .social-media h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.social-media ul li a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+}

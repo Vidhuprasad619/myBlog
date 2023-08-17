@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/css/admin/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form onsubmit="doLogin(event)">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Admin email" required>
+                 <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="password" required>
+                <span class="password-toggle" onclick="togglePasswordVisibility()"><i class="fi fi-sr-eye"></i></span>
+            </div>
+            <p id="warning"></p>
+            <div class="forget">
+                <a href="">Forgot password?</a>
+            </div>
+            <button type="submit" value="submit">Login</button>
+        </form>
+    </div>
+
+
+    <script src="/js/admin/login.js"></script>
+</body>
+</html>

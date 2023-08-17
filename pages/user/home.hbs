@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home Page</title>
+   
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/user/home.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <h1 class="blog-title"><i class="fi fi-sr-blog-pencil"> JourneyCanvas <span>:Exploring Life's Insights</span></i></h1>
+                <div class="login-signup">
+                    <button class="btn btn-outline-success "><a href="/loginPage">Login</a></button>
+                    <span>|</span>
+                    <button class="btn btn-outline-success "><a href="/signup">Sign Up</a></button>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="page-wrapper">
+                <div class="post-slider">
+                    <h1 class="slider-title">Blog Overview <i></i></h1>
+                    <i class="fi fi-rs-angle-left prev"></i>
+                    <i class="fi fi-rs-angle-right next"></i>
+                    <div class="post-wrapper">
+                        {{#each homeData}}
+                        <div class="post">
+                            <a href="/loginPage"><img src="{{this.image}}" alt="image..." class="slider-image"></a>
+                            <div class="post-info">
+                                <h2>{{this.title}}</h2>
+                                <p>{{this.summary}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+           </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@journeycanvas.com</p>
+                    <p>Phone: +91 9947701955</p>
+                </div>
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class='bx bxl-facebook-circle bx-tada' ></i></a></li>
+                        <li><a href="#"><i class='bx bxl-instagram-alt bx-tada' ></i></a></li>
+                        <li><a href="#"><i class='bx bxs-x-square bx-tada' ></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 JourneyCanvas. All rights reserved.</p>
+            </div>
+        </footer> 
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="js/user/home.js"></script>
+</body>
+</html>
