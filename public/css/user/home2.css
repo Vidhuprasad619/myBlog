@@ -3,8 +3,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    background-image: linear-gradient(rgb(29, 187, 126), rgb(3, 12, 39));
-    background-blend-mode: luminosity;
 }
 
 .container{ 
@@ -14,43 +12,83 @@ body {
 }
 
 header{
-    width: 100%;
-    background-color: #01070f;
-    color: #fff;
-    padding: 20px;
-    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
     z-index: 1;
+    border-bottom: 1px solid rgb(192, 191, 191);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+.navbar-collapse{
+    flex-grow: 0;
 }
 
-nav h1 {
-    margin: 0;
-    font-size: 24px;
-}
-nav h1 span{
+.head-logo span{
     font-size: 12px;
 }
 
-.logout .user-name{
+.logout button{
+    background-color: transparent;
+    color: black;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.logout  button:hover{
+    background-color: #0056b3;
     color: #fff;
+    border: 2px solid #0056b3;
 }
-.logout .user-name:hover{
-    background-color: #01070f;
+
+.user-name i{
+    font-size: 30px;
 }
+
+.user-name{
+    border-radius: 15%;
+    padding: 1px 5px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+}
+
 
 main {
     margin-top: 80px;
     padding: 20px;
+}
+
+.head-upload{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px; 
+    border-bottom: 1px solid rgb(192, 191, 191);
+}
+
+.upload-button{
+    background-color: transparent;
+    color: black;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.upload-button:hover{
+    background-color: #0056b3;
+    color: #fff;
+    border: 2px solid #0056b3;
 }
 
 .heading{
@@ -59,7 +97,6 @@ main {
     font-weight: 600;
     text-align: center;
     padding: 20px; 
-    border-bottom: 2px solid #191a1b;
     margin: 0;
 }
 
@@ -67,11 +104,11 @@ main {
     height: 600px;
     width: 500px;
     padding: 10px;
-    background-color: rgba(190, 199, 196, 0.377);
+    background-color: rgb(218, 223, 221);
     border-radius: 5px;
     box-shadow: 2rem 1rem 1rem -1rem;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.4s;
 }
 
 .blog-box:hover{
@@ -80,6 +117,7 @@ main {
 
 .blog-box img{
     height: 280px;
+    border: 1px solid rgb(129, 128, 128);
     overflow: hidden;
 }
 .blog-box div{
@@ -107,33 +145,10 @@ main {
 }
 
 
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    background-color: #01070f;
-    color: #fff;
+footer{
+    border-top: 1px solid rgb(192, 191, 191);
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 80%;
-    margin: 0 auto;
-}
-
-.contact-info, .social-media {
-    padding: 10px;
-}
-
-.contact-info h3, .social-media h3 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.contact-info p {
-    margin: 5px 0;
-}
 
 .social-media ul {
     list-style: none;
@@ -143,13 +158,9 @@ footer {
 }
 
 .social-media ul li a {
-    color: #fff;
+    color: black;
     font-size: 24px;
     text-decoration: none;
-}
-
-.footer-bottom {
-    margin-top: 20px;
 }
 
 

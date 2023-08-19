@@ -18,7 +18,6 @@ const doLogin=(event)=>{
     .then(data=>{
         if(data.login){
             window.location.href='/admin/uploads';
-            console.log(data);
         }else{
             document.getElementById('warning').innerHTML="Invalid credentials";
             setTimeout(()=>{

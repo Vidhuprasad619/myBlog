@@ -17,7 +17,6 @@ const doSignup=()=>{
     }).then(response=>response.json())
     .then((data)=>{
         window.location.href='/loginPage'
-        console.log(data.signup);
     })
 
     nameValidation();

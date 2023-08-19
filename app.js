@@ -6,6 +6,7 @@ const user=require('./routes/user');
 const admin=require('./routes/admin');
 const connectDB=require('./config/dbConfig');
 const cookieParser=require('cookie-parser');
+require('dotenv').config();
 
 connectDB();
 
@@ -20,11 +21,15 @@ app.use('/',(req,res,next)=>{
     res.set('Cache-Control','no-store');
     next();
 })
+app.use('/admin',(req,res,next)=>{
+    res.set('Cache-Control','no-store');
+    next();
+})
 
 app.use('/',user);
 app.use('/admin',admin);
 
 
-app.listen(5000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("server started at port 5000");
 })

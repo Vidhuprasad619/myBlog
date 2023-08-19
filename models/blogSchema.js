@@ -14,7 +14,14 @@ const blogSchema=new mongoose.Schema({
         type:Date,
         default:new Date()
     },
-    // createdBy:
+    createdByUser:{
+        type:mongoose.Types.ObjectId,
+        ref:'users'
+    },
+    createdByAdmin:{
+        type:mongoose.Types.ObjectId,
+        ref:'admins'
+    },
     content:{
         type:String,
         required:true
@@ -25,3 +32,8 @@ const blogSchema=new mongoose.Schema({
 const blogs=mongoose.model('blogs',blogSchema);
 
 module.exports=blogs;
+
+
+
+
+
