@@ -17,7 +17,7 @@ const doLogin=(event)=>{
     }).then(response=>response.json())
     .then(data=>{
         if(data.login){
-            window.location.href='/admin/uploads';
+            window.location.href='/admin/home';
         }else{
             document.getElementById('warning').innerHTML="Invalid credentials";
             setTimeout(()=>{

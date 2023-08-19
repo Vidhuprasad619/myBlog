@@ -21,10 +21,7 @@ app.use('/',(req,res,next)=>{
     res.set('Cache-Control','no-store');
     next();
 })
-app.use('/admin',(req,res,next)=>{
-    res.set('Cache-Control','no-store');
-    next();
-})
+
 
 app.use('/',user);
 app.use('/admin',admin);

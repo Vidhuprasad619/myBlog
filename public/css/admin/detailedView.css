@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.container{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 1px solid rgb(192, 191, 191);
+}
+
+.navbar-collapse{
+    flex-grow: 0;
+}
+
+.head-logo span{
+    font-size: 12px;
+}
+
+.logout button{
+    background-color: transparent;
+    color: black;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.logout  button:hover{
+    background-color: #0056b3;
+    color: #fff;
+    border: 2px solid #0056b3;
+}
+
+.user-name i{
+    font-size: 30px;
+}
+
+.user-name{
+    border-radius: 15%;
+    padding: 1px 5px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(20px);
+}
+
+
+
+main {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.head-creator{
+    border-bottom: 1px solid rgb(192, 191, 191);
+    margin-bottom: 20px;
+}
+
+.heading{
+    font-size: 80px;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+}
+
+.creator{
+    padding-top: 60px;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+}
+
+.image-silder{
+    padding: 10px;
+    border: 2px solid rgb(192, 191, 191);
+    border-radius: 15px;
+}
+
+.image-carousel{
+ background-color: #191a1b;
+}
+
+.content{
+    color: black;
+}
+
+
+footer{
+    border-top: 1px solid rgb(192, 191, 191);
+}
+
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.social-media ul li a {
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logut {
+        margin-top: 10px;
+    }
+    main {
+        padding: 10px;
+    }
+}

@@ -96,6 +96,60 @@ const logout=(req,res)=>{
 
 }
 
+const homePage=(req,res)=>{
+    try{
+        BLOGS.find().then((response)=>{
+            res.render('admin/home.hbs',{home2Data:response});
+            }).catch(err => {        
+                res.status(404).send('home page not found');
+                res.render('error/error.hbs');
+        });
+    }catch(err){
+        console.error('Error fetching blog posts:', err);
+        res.render('error/error.hbs');
+    }
+    
+}
 
 
-module.exports={loginPage,doLogIn,uploadPage,createBlog,logout};
+const detailedView=(req,res)=>{
+    try{
+        BLOGS.find({_id:req.query.id})
+        .populate({
+            path: 'createdByUser',
+            select: ['name', 'email']
+        })
+        .populate({
+            path: 'createdByAdmin',
+            select: ['name', 'email']
+        }).then((response)=>{
+                // response[0].createdAt=new Date(response[0].createdAt)
+                res.render('admin/detailedView.hbs',{detailedData:response[0]});
+            }).catch(err => {
+                res.status(404).send('Blog not found',err);
+                res.render('error/error.hbs');
+        });
+    }catch(err){
+        console.error('Error fetching blog posts:', err);
+        res.render('error/error.hbs');
+    }
+    
+
+}
+
+
+const removePost=(req,res)=>{
+    try{
+        const postId = req.params.id;
+        BLOGS.findByIdAndDelete(postId);
+        res.redirect('/admin/home');
+    }catch(err){
+        console.error('Error deleting post:', err);
+        res.status(500).render('error/error.hbs');
+    }
+    
+}
+
+
+
+module.exports={loginPage,doLogIn,uploadPage,createBlog,logout,homePage,detailedView,removePost};

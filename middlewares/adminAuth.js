@@ -10,6 +10,7 @@ const adminAuthentication=((req,res,next)=>{
                 getAdminData(admin.adminId).then(response=>{
                     res.locals.adminDetails=response[0]
                     next();
+                    
                 })
             }else{
                 res.cookie('adminJwt',null,{
