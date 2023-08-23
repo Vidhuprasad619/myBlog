@@ -28,7 +28,7 @@ header{
     font-size: 12px;
 }
 
-.logout button{
+.logout .btn{
     background-color: transparent;
     color: black;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -40,7 +40,7 @@ header{
     transition: background-color 0.2s ease-in-out;
 }
 
-.logout  button:hover{
+.logout  .btn:hover{
     background-color: #0056b3;
     color: #fff;
     border: 2px solid #0056b3;
@@ -99,6 +99,9 @@ main {
     color: black;
 }
 
+.content p{
+    text-indent: 70px;
+}
 
 footer{
     border-top: 1px solid rgb(192, 191, 191);
@@ -119,16 +122,3 @@ footer{
 }
 
 
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logut {
-        margin-top: 10px;
-    }
-    main {
-        padding: 10px;
-    }
-}

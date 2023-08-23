@@ -22,8 +22,9 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="d-flex gap-3 logout">
-                            <div class="user-name"><i class='bx bxs-user-circle'></i>{{adminDetails.name}}</div>
+                            <div class="admin-name"><i class='bx bxs-user-circle'></i>{{adminDetails.name}}</div>
                             <button class="btn " onclick="logout()">Logout</button>
+                            <a href="/admin/home" class="btn">Home</a>
                         </div>
                     </div>
                 </div>
@@ -33,9 +34,9 @@
             <div class="d-flex justify-content-evenly head-creator">
                 <h1 class="heading">{{detailedData.title}}</h1>
                 {{#if detailedData.createdByUser}}
-                <h6 class="creator">-Creator (User): {{detailedData.createdByUser.name}}-</h6>
+                <h6 class="creator">Author (User): {{detailedData.createdByUser.name}}</h6>
                 {{else if detailedData.createdByAdmin}}
-                    <h6 class="creator">-Creator (Admin): {{detailedData.createdByAdmin.name}}-</h6>
+                    <h6 class="creator">Author (Admin): {{detailedData.createdByAdmin.name}}</h6>
                 {{/if}}
             </div>  
             <div id="carouselExampleInterval" class="carousel slide image-silder" data-bs-ride="carousel">
@@ -68,8 +69,9 @@
                 </button>
             </div>
             <div class="content">
-                <h3>Category : {{detailedData.category}}</h3>
-                <p>
+                <h3 class="py-3">Category : {{detailedData.category}}</h3>
+                <h6 class="bg-yellow">Posted at : {{detailedData.day}}</h6>
+                <p class="py-5">
                     {{detailedData.content}}
                 </p>
             </div>

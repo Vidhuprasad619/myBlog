@@ -10,7 +10,7 @@ router.post('/createBlog',createBlog);
 router.get('/logout',logout);
 router.get('/home',adminAuth,homePage);
 router.get('/detailedView',adminAuth,detailedView);
-router.get('/removePost/',removePost);
+router.delete('/removePost/',removePost);
 
 
 

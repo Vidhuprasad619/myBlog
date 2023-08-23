@@ -22,7 +22,7 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="d-flex gap-3 logout">
-                            <div class="user-name"><i class='bx bxs-user-circle'></i>{{adminDetails.name}}</div>
+                            <div class="admin-name"><i class='bx bxs-user-circle'></i>{{adminDetails.name}}</div>
                             <button class="btn " onclick="logout()">Logout</button>
                         </div>
                     </div>
@@ -35,16 +35,16 @@
                 <a href="/admin/uploads"><button class="btn upload-button">Create blog</button></a>
             </div>
             <div class="row">
-                {{#each home2Data}}
+                {{#each homeData}}
                 <div class="card col-xs-12 col-sm-6 col-md-4 my-3 blog-box container-fluid" style="width: 18rem;">
                         <img src="/uploads/{{this.images.[0].filename}}" class="card-img-top" alt="blog image...">
                         <div class="card-body">
                             <h2 class="card-title">{{this.title}}</h2>
-                            <h5 class="card-category">category: {{this.category}}</h5>
+                            <h5 class="card-category">Category: {{this.category}}</h5>
                             <p class="card-text">{{this.content}}</p>
                             <div class="d-flex remove-view">
                             <a href="/admin/detailedView?id={{this._id}}" class="btn btn-primary m-2 custom-a">Detailed View</a>
-                            <a href="/admin/removePost?id={{this._id}}" class="btn btn-primary m-2 custom-a">Remove Post</a>
+                            <button class="btn btn-primary m-2 remove-btn" onclick="removePost('{{this._id}}')">Remove post</button>
                             </div>
                         </div>
                 </div>

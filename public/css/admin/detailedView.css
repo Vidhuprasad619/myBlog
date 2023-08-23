@@ -6,6 +6,7 @@ body {
 }
 
 .container{ 
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,7 +29,7 @@ header{
     font-size: 12px;
 }
 
-.logout button{
+.logout .btn{
     background-color: transparent;
     color: black;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -40,17 +41,17 @@ header{
     transition: background-color 0.2s ease-in-out;
 }
 
-.logout  button:hover{
+.logout  .btn:hover{
     background-color: #0056b3;
     color: #fff;
     border: 2px solid #0056b3;
 }
 
-.user-name i{
+.admin-name i{
     font-size: 30px;
 }
 
-.user-name{
+.admin-name{
     border-radius: 15%;
     padding: 1px 5px;
     text-align: center;
@@ -99,6 +100,10 @@ main {
     color: black;
 }
 
+.content p{
+    text-indent: 70px;
+}
+
 
 footer{
     border-top: 1px solid rgb(192, 191, 191);
@@ -118,17 +123,3 @@ footer{
     text-decoration: none;
 }
 
-
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logut {
-        margin-top: 10px;
-    }
-    main {
-        padding: 10px;
-    }
-}

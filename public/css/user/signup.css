@@ -35,7 +35,7 @@ body {
     margin-bottom: 30px;
 }
 
-.signup-container .form-group {
+ .form-group {
     position: relative;
     height: 50px;
     width: 100%;
@@ -99,7 +99,7 @@ body {
 .signup-container span {
     display: block;
     color: #ff0000; 
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 5px;
 }
 

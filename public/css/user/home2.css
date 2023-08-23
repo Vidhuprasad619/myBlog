@@ -163,17 +163,3 @@ footer{
     text-decoration: none;
 }
 
-
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logut {
-        margin-top: 10px;
-    }
-    main {
-        padding: 10px;
-    }
-}

@@ -1,32 +1,26 @@
 
 
 
-const doSignup=()=>{
+const doSignup = () => {
+    if (nameValidation() && emailValidation() && passwordValidation() && password2Validation()) {
+        let formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value
+        };
 
-    let formData={};
-    formData.name=document.getElementById('name').value;
-    formData.email=document.getElementById('email').value;
-    formData.password=document.getElementById('password').value;
-    
-    fetch('/register',{
-        method:"post",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(formData)
-    }).then(response=>response.json())
-    .then((data)=>{
-        window.location.href='/loginPage'
-    })
-
-    nameValidation();
-    emailValidation();
-    passwordValidation();
-    password2Validation();
-
-    if(nameValidation() && emailValidation() && passwordValidation() && password2Validation()){
-        return true;
-    }else{
+        fetch('/register', {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then((data) => {
+            window.location.href = '/loginPage';
+        });
+    } else {
         return false;
     }
 }
@@ -35,13 +29,16 @@ const doSignup=()=>{
 // signup validation
 
 const nameValidation = () =>{
-    var text = document.getElementById('name').value;
-    var regex = /^([A-Za-z\.]+)$/;
-    if(regex.test(text)){
-        document.getElementById('error-name').innerHTML="";
+    var text = document.getElementById('name').value.trim();
+    var regex = /^[A-Za-z][A-Za-z\s\.]*[A-Za-z]$/;
+    if (regex.test(text)) {
+        document.getElementById('error-name').innerHTML = "";
         return true;
-    }else{
-        document.getElementById('error-name').innerHTML="Eneter correct name";
+    } else if (text === "") {
+        document.getElementById('error-name').innerHTML = "Name cannot be empty";
+        return false;
+    } else {
+        document.getElementById('error-name').innerHTML = "Enter correct name";
         return false;
     }
 }
@@ -58,17 +55,41 @@ const emailValidation = () =>{
     }
 }
 
-const passwordValidation =()=>{
+const passwordValidation = () => {
     var text = document.getElementById('password').value;
-    var regex = /^(.{5,})$/;
-    if(regex.test(text)){
-        document.getElementById('error-password').innerHTML="";
-        return true; 
-    }else{
-        document.getElementById('error-password').innerHTML="5 or more characters required";
+    var hasLetter = /[A-Za-z]/.test(text);
+    var hasDigit = /\d/.test(text);
+    var hasSpecialChar = /[@$!%*#?&]/.test(text);
+    var hasNoWhiteSpace = /^\S+$/.test(text); // Check for no white spaces
+    var regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+    if (regex.test(text) && hasNoWhiteSpace) {
+        document.getElementById('error-password').innerHTML = "";
+        return true;
+    } else {
+        var errorMessage = "Password must meet the following requirements:";
+        if (!hasLetter) {
+            errorMessage += " at least one letter,";
+        }
+        if (!hasDigit) {
+            errorMessage += " at least one digit,";
+        }
+        if (!hasSpecialChar) {
+            errorMessage += " at least one special character (@$!%*#?&),";
+        }
+        if (!hasNoWhiteSpace) {
+            errorMessage += " no white spaces,";
+        }
+        if (text.length < 8) {
+            errorMessage += " minimum length of 8 characters,";
+        }
+        errorMessage = errorMessage.replace(/,$/, "");
+        document.getElementById('error-password').innerHTML = errorMessage;
         return false;
     }
 }
+
+
 
 const password2Validation =()=>{
     var password1 = document.getElementById('password').value;
